@@ -1,20 +1,27 @@
 package Banco.Reserva.Conta.Controller;
 
+import Banco.Reserva.Conta.Domain.Conta;
+import Banco.Reserva.Conta.Service.ContaService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
 @SpringBootApplication
 @RestController
 @RequestMapping("conta")
 public class ContaController {
 
-    @GetMapping("/hello")
-    public String sayHello(@RequestParam(value = "myName", defaultValue = "World") String name) {
+    @Autowired
+    private ContaService _service;
 
-        return String.format("Hello %s", name);
+    @RequestMapping(value = "{idconta}", method = GET)
+    @ResponseBody
+    public ResponseEntity<Conta> sayHello(@PathVariable int idconta) {
+        return ResponseEntity.status(HttpStatus.OK).body(_service.retornaConta(idconta));
     }
 }

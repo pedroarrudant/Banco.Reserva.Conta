@@ -1,0 +1,58 @@
+{
+	"info": {
+		"_postman_id": "626c750f-514f-43e5-acd2-a418dce9f0ee",
+		"name": "Banco.Conta.Reserva",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Criar Conta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\" : \"1\",\r\n    \"agencia\" : \"1\",\r\n    \"conta\" : \"1\",\r\n    \"cliente\" : \"Teste\",\r\n    \"saldo\" : 1000.00\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/conta/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"conta",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Recuperar conta por id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/conta/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"conta",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

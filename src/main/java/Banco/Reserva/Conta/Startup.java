@@ -9,4 +9,11 @@ public class Startup {
         SpringApplication.run(Startup.class, args);
         //SpringApplication.run(ContaController.class, args);
     }
+
+    public void retornaConexaoMongo()
+    {
+//        final String uriString = "mongodb://applicationuser:$[password]@localhost:27017/test?authSource=$[authSource]";
+//        MongoClientURI uri = new MongoClientURI(uriString);
+//        MongoClient mongoClient = new MongoClient(uri);
+    }
 }

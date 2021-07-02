@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 @SpringBootApplication
 @RestController
@@ -21,7 +22,13 @@ public class ContaController {
 
     @RequestMapping(value = "{idconta}", method = GET)
     @ResponseBody
-    public ResponseEntity<Conta> sayHello(@PathVariable int idconta) {
+    public ResponseEntity<Conta> GetConta(@PathVariable int idconta) {
         return ResponseEntity.status(HttpStatus.OK).body(_service.retornaConta(idconta));
+    }
+
+    @RequestMapping(value = "/", method = POST)
+    @ResponseBody
+    public ResponseEntity<Conta> CreateConta(@RequestBody Conta conta) {
+        return ResponseEntity.status(HttpStatus.OK).body(_service.createConta(conta));
     }
 }

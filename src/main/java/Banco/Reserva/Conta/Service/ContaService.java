@@ -1,9 +1,7 @@
 package Banco.Reserva.Conta.Service;
 
 import Banco.Reserva.Conta.Domain.Conta;
-import Banco.Reserva.Conta.Repository.ContaRepository;
 import Banco.Reserva.Conta.Repository.ContasRepository;
-import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

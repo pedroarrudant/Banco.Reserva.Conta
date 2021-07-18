@@ -4,6 +4,7 @@ import Banco.Reserva.Conta.Domain.Conta;
 import Banco.Reserva.Conta.Domain.Reserva;
 import Banco.Reserva.Conta.Domain.Reservas;
 import Banco.Reserva.Conta.Service.ContaService;
+import Banco.Reserva.Conta.Service.ReservaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.HttpStatus;
@@ -15,21 +16,21 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 @SpringBootApplication
 @RestController
-@RequestMapping("conta")
-public class ContaController {
+@RequestMapping("reserva")
+public class ReservaController {
 
     @Autowired
-    private ContaService _service;
+    private ReservaService _service;
 
-    @RequestMapping(value = "{idconta}", method = GET)
-    @ResponseBody
-    public ResponseEntity<Conta> GetConta(@PathVariable int idconta) {
-        return ResponseEntity.status(HttpStatus.OK).body(_service.retornaConta(idconta));
-    }
+//    @RequestMapping(value = "{idreserva}", method = GET)
+//    @ResponseBody
+//    public ResponseEntity<Reservas> GetReserva(@PathVariable int idReserva) {
+//        return ResponseEntity.status(HttpStatus.OK).body(_service.retornaReserva(idconta));
+//    }
 
     @RequestMapping(value = "/", method = POST)
     @ResponseBody
-    public ResponseEntity<Conta> CreateConta(@RequestBody Conta conta) {
-        return ResponseEntity.status(HttpStatus.OK).body(_service.createConta(conta));
+    public ResponseEntity<Reservas> CreateReserva(@RequestBody Reserva reserva) {
+        return ResponseEntity.status(HttpStatus.OK).body(_service.retornaReserva(reserva));
     }
 }

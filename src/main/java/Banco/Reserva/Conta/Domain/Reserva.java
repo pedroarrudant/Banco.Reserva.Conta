@@ -4,24 +4,19 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.data.annotation.Id;
+import nonapi.io.github.classgraph.json.Id;
+import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Document(collection="Cliente")
-public class Cliente {
-
+@Document(collection="Reserva")
+public class Reserva {
     @Id
     public int id;
-
-    public String nomeCompleto;
-
-    public String cpf;
-
-    public int idade;
-
-    public String telefone;
+    public int idCliente;
+    public String Nome;
+    public long Saldo;
 }

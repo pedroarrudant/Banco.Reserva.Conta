@@ -23,7 +23,5 @@ public class Conta {
 
     public int conta;
 
-    public String cliente;
-
     public long saldo;
 }
